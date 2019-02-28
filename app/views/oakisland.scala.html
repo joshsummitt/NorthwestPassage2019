@@ -1,0 +1,23 @@
+@(crew: String, crewMembers: String)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Oak Island</title>
+    </head>
+    <body>
+        <h1>You lost too many crew members to continue operating the ship</h1>
+        <p>
+            Took refuge on Oak Island.
+        </p>
+        <p>
+            Current Crew Size: @crew
+            <br>
+            Current Crew Members: @crewMembers
+        </p>
+        <img src="/assets/images/oakisland.jpg" width="200">
+        <form method="get" action="/">
+            <input type="submit" value="New Player">
+        </form>
+    </body>
+</html>

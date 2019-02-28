@@ -1,0 +1,28 @@
+@(crew : String)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Northwest Passage</title>
+    </head>
+    <body>
+        <h1>Things are looking a little frosty</h1>
+        <img src="/assets/images/north.jpg" width="200">
+        <p>
+            The temperature is dropping dramatically and bad weather has rolled in. It is a constant battle to keep
+            ice accumulation from overtaking the ship. The further North you travel the more the conditions worsen.
+            Pushing forward could very well be a suicide mission.
+        </p>
+        <p>
+            Current crew size: @crew
+        </p>
+        <form action="/home" method="POST">
+            @helper.CSRF.formField
+            <input type="submit" value="Sail back South"/>
+        </form>
+        <form action="/northEnd" method="POST">
+            @helper.CSRF.formField
+            <input type="submit" value="Keep trying to sail North"/>
+        </form>
+    </body>
+</html>

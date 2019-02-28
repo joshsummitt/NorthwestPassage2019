@@ -1,22 +1,30 @@
+@(crew : String, lostMember: String, crewMembers: String)
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Northwest Passage</title>
-</head>
-<body>
-<h1>Too Much Land</h1>
-<p>This way is not looking very promising.
-    You keep going in and out of bays trying to find a way east but you always run into land.
-    You are afraid you may run aground and be eaten by one of the roving bands of feral kittens you see frolicking upon the shore.
-</p>
-<form action="/home" method="POST">
-    @helper.CSRF.formField
-    <input type="submit" value="Sail back West"/>
-</form>
-<form action="/eastEnd" method="POST">
-    @helper.CSRF.formField
-    <input type="submit" value="Keep trying to sail East"/>
-</form>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>Northwest Passage</title>
+    </head>
+    <body>
+        <h1>Too Much Land</h1>
+        <img src="/assets/images/east.jpg" width="200">
+        <p>This way is not looking very promising.
+            You keep going in and out of bays trying to find a way east but you always run into land.
+            You are afraid you may run aground and be eaten by one of the roving bands of feral kittens you see
+            frolicking upon the shore.
+        </p>
+        <p>
+            You lost @lostMember! Current crew size: @crew
+            <br>
+            Remaining Crew Members: @crewMembers
+        </p>
+        <form action="/home" method="POST">
+            @helper.CSRF.formField
+            <input type="submit" value="Sail back West"/>
+        </form>
+        <form action="/eastEnd" method="POST">
+            @helper.CSRF.formField
+            <input type="submit" value="Keep trying to sail East"/>
+        </form>
+    </body>
 </html>
